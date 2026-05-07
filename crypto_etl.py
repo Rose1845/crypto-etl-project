@@ -5,7 +5,6 @@ from sqlalchemy import create_engine
 import os
 from dotenv import load_dotenv
 
-
 load_dotenv()
 COINS = ["btc-bitcoin",
          "eth-ethereum", "sol-solana", "xrp-xrp"
