@@ -9,11 +9,14 @@ COINS = ["btc-bitcoin", "eth-ethereum", "sol-solana", "xrp-xrp"]
 
 
 for coin_id in COINS:
-    url = f"https://api.coinpaprika.com/v1/coins/{coin_id}"
+    url = f"https://api.coinpaprika.com/v1/coins/{coin_id}/markets?quotes=USD"
 
     response = requests.get(url)
 
     if response.status_code == 200:
+        data = response.json()
+
+        print(response.text)
         print(f"Sucessfully Retrieved data for coin {coin_id}")
     else:
         print(f"Failed to retruve data")
