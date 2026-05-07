@@ -1,0 +1,14 @@
+services:
+  crypto_etl:
+    build: .
+    container_name: crypto_etl
+
+  postgres:
+    image: postgres:latest
+    container_name: crypto-postgres
+    environment:
+      - POSTGRS_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - ${DB_PORT}:5432
